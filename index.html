@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="style.css" type="text/css"/> 
+</head>
+<body>
+ <ul class="tree" id="tree">
+     <li>
+         ՀԱՅԱՍՏԱՆ
+         <ul >
+             <li>Շիրակ
+                 <ul>
+                     <li>Գյումրի
+                         <ul>Սլոբոդկա</ul>
+                     </li>
+                     
+                 </ul>
+             </li>
+             <li>Տավուշ
+                <ul>
+                    <li>Իջևան
+                        <ul>Երիտասարդական</ul>
+                    </li>
+                </ul>
+             </li>
+             <li>Լոռի
+                  <ul>
+                     <li>Վանաձոր
+                        <ul>Դիմաց</ul>
+                    </li>
+                </ul>
+            </li>
+             <li>Արագածոտն
+                 <ul>Աշտարակ</ul>
+             </li>
+             <li>Արմավիր
+                 <ul>Արմավիր</ul>
+             </li>
+             <li>Արարատ
+                 <ul>Արտաշատ</ul>
+             </li>
+             <li>Սյունիք
+                 <ul>Կապան</ul>
+             </li>
+             <li>Վայոց ձոր
+                 <ul><li>Եղեգնաձոր
+                     <ul>
+                         <li>Միկոյան
+                             <ul>Նորից-Նոր
+                              </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+             </li>
+             <li>Գեղարքունիք
+                 <ul>Գավառ
+             </ul>
+            </li>
+             <li>Կոտայք<ul>Հրազդան</ul></li>
+             <li>ԵՐևԱՆ</li>
+         </ul>
+      </li>
+    </ul>
+
+
+
+ </div>
+<script>
+    for(let li of tree.querySelectorAll('li')){
+    let span=document.createElement('span');
+    span.classList.add('view');
+    li.prepend(span);
+    span.append(span.nextSibling)
+}
+
+tree.onclick=function(event){
+    console.log(event.target.tagName);
+    if(event.target.tagName !='SPAN')return;
+    let openName=event.target.parentNode.querySelector('ul');
+ openName.hidden = !openName.hidden;
+}
+
+</script>
+
+</body>
+</html>
